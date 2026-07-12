@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Legal &amp; Policies — Sarvatra AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: #FFFFFF;
+  --sidebar-bg: #FAFAFA;
+  --text-primary: #111111;
+  --text-secondary: #666666;
+  --text-muted: #9A9A9A;
+  --border: #ECECEC;
+  --card: #FFFFFF;
+  --accent: #000000;
+  --accent-contrast: #FFFFFF;
+  --hover: #F2F2F2;
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+
+  --font: 'Inter', -apple-system, "SF Pro Display", BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+*,*::before,*::after{ box-sizing: border-box; }
+html,body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.65;
+}
+a{ color: inherit; }
+ul,ol{ margin: 0 0 0 0; padding-left: 20px; }
+h1,h2,h3,p,ul,ol{ margin: 0 0 14px 0; }
+
+/* ---------- Top bar ---------- */
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 24px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.topbar-brand{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+.topbar-brand .mark{
+  width: 26px; height: 26px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800;
+}
+.back-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  transition: background 140ms ease, color 140ms ease;
+}
+.back-link:hover{ background: var(--hover); color: var(--text-primary); }
+
+/* ---------- Layout ---------- */
+.shell{
+  display: flex;
+  max-width: 1180px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+.side{
+  width: 260px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 66px;
+  max-height: calc(100vh - 66px);
+  overflow-y: auto;
+  padding: 32px 16px 40px 24px;
+}
+.side-title{
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0 12px 10px;
+}
+.side nav a{
+  display: block;
+  padding: 9px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin-bottom: 2px;
+  transition: background 120ms ease, color 120ms ease;
+}
+.side nav a:hover{ background: var(--hover); color: var(--text-primary); }
+.side nav a.active{ background: var(--active, #EFEFEF); color: var(--text-primary); font-weight: 700; }
+
+.content{
+  flex: 1;
+  min-width: 0;
+  padding: 40px 28px 100px;
+}
+.content-header{
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+.content-header h1{
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.content-header .updated{
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.intro-note{
+  background: var(--sidebar-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+section.policy{
+  padding-top: 44px;
+  margin-top: 8px;
+  border-top: 1px solid var(--border);
+  scroll-margin-top: 84px;
+}
+section.policy:first-of-type{ border-top: none; padding-top: 0; }
+.policy h2{
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+.policy .eyebrow{
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.policy h3{
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+.policy p, .policy li{
+  font-size: 14.5px;
+  color: #2b2b2b;
+}
+.policy li{ margin-bottom: 6px; }
+.policy strong{ font-weight: 700; color: var(--text-primary); }
+.contact-box{
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: var(--sidebar-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+}
+
+/* ---------- Mobile ---------- */
+.side-toggle{ display: none; }
+@media (max-width: 860px){
+  .side{
+    display: none;
+  }
+  .side.open{
+    display: block;
+    position: fixed;
+    inset: 58px 0 0 0;
+    width: auto;
+    max-height: none;
+    height: calc(100% - 58px);
+    background: var(--bg);
+    z-index: 40;
+    padding: 20px;
+  }
+  .side-toggle{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--border);
+    background: var(--card);
+  }
+  .content{ padding: 28px 18px 80px; }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="topbar-brand" href="index.html">
+    <span class="mark">S</span>
+    <span>Sarvatra AI</span>
+  </a>
+  <div style="display:flex; align-items:center; gap:8px;">
+    <button class="side-toggle" id="sideToggle" type="button">☰ Sections</button>
+    <a class="back-link" href="index.html">← Back to chat</a>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="side" id="sideNav">
+    <div class="side-title">On this page</div>
+    <nav id="tocNav">
+      <a href="#privacy-policy">Privacy Policy</a>
+      <a href="#terms-of-service">Terms of Service</a>
+      <a href="#cookie-policy">Cookie Policy</a>
+      <a href="#acceptable-use-policy">Acceptable Use Policy</a>
+      <a href="#community-guidelines">Community Guidelines</a>
+      <a href="#ai-usage-policy">AI Usage &amp; Responsible AI Policy</a>
+      <a href="#content-policy">Content Policy</a>
+      <a href="#copyright-policy">Copyright Policy (DMCA)</a>
+      <a href="#trademark-policy">Trademark Policy</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <div class="content-header">
+      <h1>Legal &amp; Policies</h1>
+      <p class="updated">Last updated: July 12, 2026</p>
+    </div>
+
+    <div class="intro-note">
+      Sarvatra AI is an independent, student-built, open-source project. It is not a registered company. These policies describe, in plain language, how the project is meant to be used and how your data is handled — they're written to be genuinely useful, not just boilerplate. If you have questions, use the contact details at the bottom of any section.
+    </div>
+
+    <!-- ================= PRIVACY POLICY ================= -->
+    <section class="policy" id="privacy-policy">
+      <div class="eyebrow">01</div>
+      <h2>Privacy Policy</h2>
+      <p>This Privacy Policy explains what information Sarvatra AI ("Sarvatra", "we", "the project") collects when you use the app, why it's collected, and how it's stored.</p>
+
+      <h3>Information we collect</h3>
+      <ul>
+        <li><strong>Account information:</strong> when you sign in with Google or create an email/password account, we receive your name, email address, and profile photo (if any) from the authentication provider.</li>
+        <li><strong>Conversation data:</strong> the messages you send, the AI's responses, chat titles, and any files or images you attach are stored so your chat history is available across sessions.</li>
+        <li><strong>App preferences:</strong> settings like your selected model, theme (light/dark), and response-speed preference.</li>
+        <li><strong>Technical data:</strong> basic technical information (such as browser type) may be logged automatically for debugging and abuse prevention.</li>
+      </ul>
+
+      <h3>How we store it</h3>
+      <p>Account authentication is handled by Firebase Authentication. Chats, messages, and settings are stored in Supabase, a hosted database provider, and are tied to your account so only you can access them. We do not sell, rent, or trade your personal data to third parties.</p>
+
+      <h3>How AI messages are processed</h3>
+      <p>When you send a message, it is forwarded to Groq's API (the provider that runs the Llama and other models available in Sarvatra) to generate a response. Groq processes this data to return the AI's reply; please refer to Groq's own privacy practices for how they handle inference requests. Sarvatra does not use your conversations to train its own models.</p>
+
+      <h3>Your choices</h3>
+      <ul>
+        <li>You can delete individual chats or your entire chat history from within the app at any time.</li>
+        <li>You can request full account and data deletion by contacting us — we will remove your stored data within a reasonable time.</li>
+        <li>You can sign out at any time, which ends your active session.</li>
+      </ul>
+
+      <h3>Children's privacy</h3>
+      <p>Sarvatra is not directed at children under 13, and we don't knowingly collect data from them. If you believe a child has created an account, contact us and we'll remove it.</p>
+
+      <h3>Changes to this policy</h3>
+      <p>Because this is an actively developed student project, this policy may be updated as features change. The "Last updated" date at the top of this page will always reflect the latest version.</p>
+
+      <div class="contact-box">Questions about your data? Reach out via the contact details on the project's GitHub page or in-app support.</div>
+    </section>
+
+    <!-- ================= TERMS OF SERVICE ================= -->
+    <section class="policy" id="terms-of-service">
+      <div class="eyebrow">02</div>
+      <h2>Terms of Service</h2>
+      <p>These Terms govern your use of Sarvatra AI. By creating an account or using the app, you agree to them.</p>
+
+      <h3>The service</h3>
+      <p>Sarvatra is an open-source AI chat interface that lets you converse with large language models (such as Llama 4 and Llama 3.3, served via Groq). It is built and maintained as a student/independent project and provided on an "as is" and "as available" basis, with no uptime or accuracy guarantees.</p>
+
+      <h3>Accounts</h3>
+      <ul>
+        <li>You must provide accurate information when creating an account and are responsible for keeping your login credentials secure.</li>
+        <li>You must be at least 13 years old to use Sarvatra.</li>
+        <li>You're responsible for all activity that happens under your account.</li>
+      </ul>
+
+      <h3>Acceptable use</h3>
+      <p>You agree to use Sarvatra in line with the Acceptable Use Policy, Content Policy, and Community Guidelines below. We may suspend or terminate accounts that violate these terms.</p>
+
+      <h3>AI-generated content</h3>
+      <p>Responses are generated by third-party AI models and can be incorrect, incomplete, or misleading. You should independently verify anything important before relying on it — Sarvatra and its developer are not liable for decisions made based on AI output.</p>
+
+      <h3>Intellectual property</h3>
+      <p>Sarvatra's own branding, name, and logo belong to the project. The underlying code is open-source (see the project's repository for its specific license terms); this does not extend to the third-party AI models it connects to, which remain the property of their respective providers.</p>
+
+      <h3>Termination</h3>
+      <p>You may stop using Sarvatra and delete your account at any time. We may suspend accounts that violate these Terms, abuse the service, or attempt to disrupt it for other users.</p>
+
+      <h3>Limitation of liability</h3>
+      <p>Sarvatra is provided free of charge as a learning/portfolio project. To the maximum extent permitted by law, it is provided without warranties of any kind, and the developer(s) are not liable for indirect, incidental, or consequential damages arising from its use.</p>
+
+      <h3>Changes</h3>
+      <p>These Terms may be updated as the project evolves. Continued use after changes means you accept the revised Terms.</p>
+    </section>
+
+    <!-- ================= COOKIE POLICY ================= -->
+    <section class="policy" id="cookie-policy">
+      <div class="eyebrow">03</div>
+      <h2>Cookie Policy</h2>
+      <p>Sarvatra keeps things lightweight and does not use third-party advertising or tracking cookies.</p>
+
+      <h3>What we actually use</h3>
+      <ul>
+        <li><strong>Local storage:</strong> your theme preference (light/dark) is saved in your browser's local storage so it persists between visits.</li>
+        <li><strong>Authentication session:</strong> Firebase Authentication and Supabase may set small session tokens (cookies or equivalent browser storage) purely to keep you signed in securely between page loads.</li>
+        <li><strong>No advertising or analytics-tracking cookies</strong> are set by Sarvatra itself.</li>
+      </ul>
+
+      <h3>Third-party services</h3>
+      <p>Fonts and icon libraries are loaded from CDNs (such as Google Fonts and cdnjs), which may set minimal technical cookies as part of standard content delivery. These are outside Sarvatra's direct control but are limited to functional delivery of assets, not tracking.</p>
+
+      <h3>Managing storage</h3>
+      <p>You can clear cookies and local storage at any time through your browser settings. Doing so will sign you out and reset your local theme preference, but will not delete your account data stored on the server.</p>
+    </section>
+
+    <!-- ================= ACCEPTABLE USE POLICY ================= -->
+    <section class="policy" id="acceptable-use-policy">
+      <div class="eyebrow">04</div>
+      <h2>Acceptable Use Policy (AUP)</h2>
+      <p>To keep Sarvatra safe and usable for everyone, you agree not to:</p>
+      <ul>
+        <li>Use the service to generate or spread illegal content, malware, or content that facilitates fraud, hacking, or other unlawful acts.</li>
+        <li>Attempt to bypass, exploit, or overload the app's infrastructure, rate limits, or the underlying AI provider's safety systems.</li>
+        <li>Scrape, reverse-engineer, or resell access to the service in a way that violates the project's open-source license.</li>
+        <li>Impersonate another person, organization, or the Sarvatra project itself.</li>
+        <li>Use automated tools (bots) to create accounts or generate excessive load without permission.</li>
+        <li>Upload or request generation of content that violates the Content Policy below.</li>
+      </ul>
+      <p>Violations may lead to a warning, temporary suspension, or permanent termination of access, depending on severity.</p>
+    </section>
+
+    <!-- ================= COMMUNITY GUIDELINES ================= -->
+    <section class="policy" id="community-guidelines">
+      <div class="eyebrow">05</div>
+      <h2>Community Guidelines</h2>
+      <p>Sarvatra is a student-built, open-source project, and its community (users, contributors, and anyone interacting around the project — issues, discussions, feedback) is expected to keep things respectful and constructive.</p>
+
+      <h3>We ask everyone to</h3>
+      <ul>
+        <li>Be respectful in feedback, bug reports, and discussions — critique the project, not the people behind it.</li>
+        <li>Report bugs, security issues, or misuse responsibly, ideally through the project's repository rather than public disclosure first.</li>
+        <li>Give credit when reusing or building on the open-source code, per its license.</li>
+        <li>Keep shared spaces (issue trackers, discussions, community chats if any) free of harassment, hate speech, and spam.</li>
+      </ul>
+
+      <h3>Not tolerated</h3>
+      <ul>
+        <li>Harassment, hate speech, or targeted abuse of any contributor or user.</li>
+        <li>Deliberately misrepresenting the project or its capabilities.</li>
+        <li>Sharing others' private information without consent.</li>
+      </ul>
+    </section>
+
+    <!-- ================= AI USAGE / RESPONSIBLE AI POLICY ================= -->
+    <section class="policy" id="ai-usage-policy">
+      <div class="eyebrow">06</div>
+      <h2>AI Usage Policy / Responsible AI Policy</h2>
+      <p>Sarvatra gives you access to third-party large language models (including Llama 4 and Llama 3.3 family models, served through Groq's infrastructure). This section explains how that access is intended to be used responsibly.</p>
+
+      <h3>What Sarvatra does</h3>
+      <ul>
+        <li>Sarvatra itself does not train or fine-tune the models it offers — it's an interface that routes your prompts to Groq-hosted models and displays the responses.</li>
+        <li>No model access is exclusive to Sarvatra; the same underlying models are available through other providers.</li>
+      </ul>
+
+      <h3>Responsible use expectations</h3>
+      <ul>
+        <li>Treat AI responses as assistance, not as verified fact — always sanity-check anything used for decisions that matter (medical, legal, financial, academic submissions, etc.).</li>
+        <li>Don't use Sarvatra to generate content intended to deceive people into thinking it's human-created in contexts where that matters (e.g. passing off AI writing as your own academic work, where your institution prohibits it).</li>
+        <li>Don't attempt to use the AI to generate the categories of harmful content listed in the Content Policy below — Sarvatra relies on the underlying model providers' safety systems and will act on abuse reports.</li>
+      </ul>
+
+      <h3>Limitations</h3>
+      <p>Language models can produce inaccurate, outdated, or biased output ("hallucinations"). Sarvatra does not guarantee the accuracy, completeness, or safety of any AI-generated response, and users are responsible for how they use that output.</p>
+    </section>
+
+    <!-- ================= CONTENT POLICY ================= -->
+    <section class="policy" id="content-policy">
+      <div class="eyebrow">07</div>
+      <h2>Content Policy</h2>
+      <p>This policy applies both to prompts you submit and to content generated through Sarvatra.</p>
+
+      <h3>Prohibited content</h3>
+      <p>You may not use Sarvatra to create, request, or share content that:</p>
+      <ul>
+        <li>Sexually exploits or endangers minors in any way.</li>
+        <li>Provides instructions for creating weapons, explosives, or other materials intended to cause mass harm.</li>
+        <li>Constitutes credible threats of violence, or promotes terrorism or violent extremism.</li>
+        <li>Is intended to harass, bully, or defame a specific individual.</li>
+        <li>Infringes on someone else's intellectual property, or is generated specifically to impersonate a real person without consent (e.g. deceptive deepfake-style content).</li>
+        <li>Spreads deliberate misinformation intended to cause real-world harm (e.g. around elections or public health).</li>
+        <li>Facilitates illegal activity, such as fraud, hacking, or the sale of illegal goods.</li>
+      </ul>
+
+      <h3>Enforcement</h3>
+      <p>Because Sarvatra routes requests through third-party model providers, some prohibited requests may already be blocked or refused by the underlying model. Sarvatra reserves the right to additionally restrict accounts that repeatedly attempt to generate prohibited content.</p>
+    </section>
+
+    <!-- ================= COPYRIGHT POLICY (DMCA) ================= -->
+    <section class="policy" id="copyright-policy">
+      <div class="eyebrow">08</div>
+      <h2>Copyright Policy</h2>
+      <p>Sarvatra respects intellectual property rights and expects users to do the same.</p>
+
+      <h3>Our own content</h3>
+      <p>The Sarvatra name, logo, and interface design are original work created for this project. The application's source code is open-source; check the project's repository for the exact license terms that apply to reuse.</p>
+
+      <h3>Reporting infringement</h3>
+      <p>If you believe content generated by, or hosted within, Sarvatra infringes your copyright, you can send a takedown notice including:</p>
+      <ul>
+        <li>A description of the copyrighted work you believe is infringed.</li>
+        <li>The specific location or description of the material within Sarvatra.</li>
+        <li>Your contact information.</li>
+        <li>A statement that you have a good-faith belief the use is unauthorized, and that the information provided is accurate.</li>
+      </ul>
+      <p>Upon receiving a valid notice, we will review and, where appropriate, remove or disable access to the material.</p>
+
+      <div class="contact-box">Copyright notices can be sent via the contact details listed on the project's GitHub repository.</div>
+    </section>
+
+    <!-- ================= TRADEMARK POLICY ================= -->
+    <section class="policy" id="trademark-policy">
+      <div class="eyebrow">09</div>
+      <h2>Trademark Policy</h2>
+      <p>"Sarvatra" and "Sarvatra AI", along with the associated logo and visual branding, are the original branding of this project and should not be used in ways that could confuse people about who created or operates the service.</p>
+
+      <h3>You may</h3>
+      <ul>
+        <li>Refer to Sarvatra by name when discussing, reviewing, or linking to the project (e.g. in an article, portfolio, or academic writeup).</li>
+        <li>Use the name factually to describe compatibility (e.g. "built using ideas from Sarvatra's open-source code").</li>
+      </ul>
+
+      <h3>You may not</h3>
+      <ul>
+        <li>Use the Sarvatra name or logo to imply endorsement, sponsorship, or affiliation that doesn't exist.</li>
+        <li>Use a confusingly similar name or logo for a competing or unrelated product.</li>
+        <li>Modify the logo or use it in a way that misrepresents the project.</li>
+      </ul>
+
+      <p>This is distinct from the open-source code license: you may be free to fork and reuse the underlying code per its license, while still needing to use a different name/branding for your own deployment to avoid confusion with the original project.</p>
+    </section>
+
+  </main>
+</div>
+
+<script>
+// Highlight active section in the TOC on scroll, and support the mobile toggle.
+const sections = document.querySelectorAll('section.policy');
+const links = document.querySelectorAll('#tocNav a');
+
+function setActive(id){
+  links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) setActive(entry.target.id);
+  });
+}, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+sections.forEach(s => observer.observe(s));
+
+const sideToggle = document.getElementById('sideToggle');
+const sideNav = document.getElementById('sideNav');
+if (sideToggle) {
+  sideToggle.addEventListener('click', () => sideNav.classList.toggle('open'));
+  links.forEach(l => l.addEventListener('click', () => sideNav.classList.remove('open')));
+}
+</script>
+
+</body>
+</html>
